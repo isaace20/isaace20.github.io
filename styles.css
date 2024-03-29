@@ -1,0 +1,587 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+/* reset css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: "League Spartan";
+    /* border: solid 2px red; */
+}
+/* color palette */
+:root {
+    --background-color: #000012;
+    --second-bd-color: #052659;
+    --text-color: #c1e0ff;
+    --main-color: #00b7ff;
+}
+
+html{
+    font-size: 90%;
+}
+
+body{
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+section{
+    min-height: 100vh;
+    position: relative;
+}
+/* header and nav bar configuration */
+.header{
+    position: fixed;
+    top: 0;
+    left: -12rem;
+    width: 100%;
+    padding: 1rem 9%;
+    background: var(--background-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 7;
+    width: 200vw;
+}
+
+.navbar a{
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-left: 5rem;
+    font-weight: 700;
+    transition: 0.3s ease;
+} 
+
+.navbar a:hover{
+    color: var(--main-color);
+    text-shadow: 0 0 1rem var(--main-color);
+}
+
+.navbar a.active{
+    font-weight: bold;
+}
+
+.fa-bars {
+    font-size: 24px;
+    cursor: pointer;
+}
+/* drop down bar */
+#menu-icon{
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+/* home configuration */
+.home {
+    display: flex;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    line-height: 1.3;
+}
+/* initial text */
+.welcome {
+    padding-left: 1.1rem;
+    flex: 1;
+    font-size: 5rem;
+    justify-self: center;   
+}
+
+.welcome span{
+    color: var(--main-color);
+    text-shadow: 0 0 1rem var(--main-color);
+}
+
+/* stylization social media */
+.social-media a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 7rem;
+    height: 7rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 5rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.5s ease;
+}
+
+.social-media a:hover{
+    background: var(--main-color);
+    color: var(--background-color);
+    box-shadow: 0 0 1rem var(--main-color);
+    border-radius: 50%;
+}
+
+
+.bg-video {
+    flex: 1;
+    height:100vh;
+    width: 100%;
+    z-index: 8;
+    position: relative; 
+}
+
+.video-container {
+    width: 95%;
+    height: 95%;
+    transform: perspective(900px) rotateX(10deg) rotateY(5deg);
+    border: 10px solid var(--main-color);
+    box-shadow: 0px 0px 20px var(--main-color);
+    overflow: hidden;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* So that the video covers the entire space*/
+    position: absolute; /*To position the video inside the container */
+    top: 0;
+    left: 0;
+}
+
+
+/* About me */
+.about{
+    display: inline-block;
+}
+
+.about-content{
+    position: relative;
+
+    margin-bottom: 20px;
+}
+/* tittle about me */
+.about h2{
+    position: absolute;
+    font-size: 3.2rem;
+    font-weight: 700;
+    left: 5vw;
+    top: 18vh;
+}
+
+.about-content p{
+    position: absolute;
+    display: flex;
+    height: 50vh;
+    width: 50vw;
+    position: relative;
+    display: flex;
+    font-size: 2.3rem;
+    margin: 2rem 0 3rem;
+    top: 28vh;
+    left: 5vw;
+    line-height: 3rem;
+}
+
+
+/* div para posicionar la animación // div to position the animation */
+.circle {
+    height: 36vh;
+    width: 24vw;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    left: 56vw;
+    bottom: 30vh; 
+}
+/* contenedor de las 3 imagenes de la animacion // container of the 3 images of the animation */
+.img-container1, .img-container2, .img-container3 {
+    height: 16vh;
+    width: 9vw;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%; /* Posiciona los contenedores verticalmente en el centro */ /* Position the containers vertically in the center */
+    left: 50%; /* Posiciona los contenedores horizontalmente en el centro */ /* Position the containers horizontally in the center */
+    transform: translate(-50%, -50%) translateX(20vw); /* Ajusta la distancia desde el centro */ /* Set the distance from the center */
+    animation: orbit 6s linear infinite;
+    border: 8rem solid var(--main-color);
+    box-shadow: 0 0 1rem var(--main-color);
+
+    flex: 1;
+}
+
+.img-container1 img, .img-container2 img, .img-container3 img {
+    border-radius: 50%;
+    height: 15rem;
+    width: 15rem;
+    object-fit: cover;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+
+    
+}
+
+.img-container2 { animation-delay: -2s; } /* Aplicamos retraso a la segunda imagen */ /* We apply delay to the second image */
+.img-container3 { animation-delay: -4s; } /* Aplicamos retraso a la tercera imagen */ /* We apply delay to the third image */
+
+/* Animación de movimiento circular */ /* Circular motion animation */
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg) translateX(10vw) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(10vw) rotate(-360deg);
+    }
+}
+
+/* Specialized in design */  
+/* specialty  section size // tamaño de la sección de especialidad */
+.specialized{
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* specialty degree // título de especialidad */
+.specialized h2{
+    position: absolute;
+    font-size: 3.2rem;
+    font-weight: 700;
+    left: 5vw;
+    top: 18vh;
+}
+/* para que los títulos no interfieran con el desplazamiento de la animación y las imágenes//so that the titles do not interfere with the scrolling of the animation and images */
+.specialized-box h2{
+    pointer-events: none;
+}
+/* Tamaño y posicionamiento de imágenes.//Size and positioning of images. */
+.specialized-container{
+    height: 100%;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+/* estilización de contenedores de imágenes//stylization of image containers */
+.specialized-box {
+    position: relative;
+    width: 20vw;
+    height: 30vh; 
+    transition: all 3s ease;
+}
+/* estilización de la primera imagen//stylization of the first image */
+.specialized-box img:nth-child(1) {
+    position: absolute;
+    box-shadow: var(--background-color);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    object-fit: cover;
+}
+/* estilización de la segunda imagen//stylization of the second image */
+.specialized-box img:nth-child(2) {
+    position: absolute;
+    width: 100%;
+    height: 120%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(15%);
+    object-fit: cover;
+    transition: .3s ease;
+    opacity: 0;
+    
+}
+/* animación al pasar el cursor sobre la primera imagen//hover animation over the first image */
+.specialized-box:hover :nth-child(1){
+    transform: perspective(200px) rotateX(20deg) translateY(-5%) translateZ(0);
+    mask-image:linear-gradient(black 30%, transparent);
+    opacity: 50%;
+}
+
+/* Animación para que aparezca la segunda imagen.//animation for the second image to appear */
+.specialized-box:hover::before {
+    opacity: 1;
+}
+
+
+/* stylizing the 'game developer' part */
+.specialized-box:nth-of-type(1) img:nth-of-type(2):hover{
+    opacity: 1;
+    transform: translateY(-5%) translateX(-1%) scale(1.5);
+}
+/* stylizing the 'Front end part' part */
+.specialized-box:nth-of-type(2) img:nth-of-type(2):hover{
+    opacity: 1;
+    transform: translateY(-5%) scale(1.5);
+}
+/* stylizing the 'Design part' part */
+.specialized-box:nth-of-type(3) img:nth-of-type(2):hover {
+    opacity: 1;
+    transform: translateX(-1%) scale(1.2); 
+}
+
+
+/* Portfolio design */
+
+
+.portfolio{
+    min-height: 90vh;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente//Center horizontally */
+    align-items: center; /* Centra verticalmente//Center vertically */
+}
+
+.portfolio h3{
+    position: absolute;
+    font-size: 3.2rem;
+    font-weight: 700;
+    left: 5vw;
+    top: 18vh;
+}
+
+.portfolio-container{
+    height: 50%;
+    width: 50%;
+    margin-top: 15vh;
+}
+
+.portfolio-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5rem; /* Espacio entre las imágenes, ajusta según sea necesario//Space between images, adjust as needed */
+    position: relative;
+}
+
+.portfolio-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3rem;
+    position: relative;
+}
+
+.portfolio-box img:hover {
+    filter: blur(5px);
+}
+
+.portfolio-box  a .description{
+    display: flex;
+    position: absolute;
+    font-size: 3.2rem;
+    font-weight: 700;
+    opacity: 1;
+    transform: translate(2rem, -100%);
+    color: var(--background-color);
+    opacity: 0;
+}
+
+
+.portfolio-box a:hover .description {
+    opacity: 1;
+}
+
+
+/* My skill design */
+
+.grid-skill {
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));  /*Uso auto-fill para que las columnas se ajusten automáticamente//I use auto-fill so that the columns fit automatically*/
+    gap: 5rem;  
+    width: 90%;
+    transform-style: preserve-3d;
+    grid-auto-flow: row;
+    margin-left: 5rem;
+}
+
+.grid-skill img {
+    height: 100%;
+    width: 100%;
+    border-radius: 3rem;
+    object-fit: contain;
+    transition: all 0.5s ease;
+    margin-right: 2rem; 
+    margin-left: 2rem; 
+}
+
+
+.skills h3{
+    font-size: 3.2rem;
+    font-weight: 700;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    margin-left: 5vw;
+}
+
+.grid-skill:hover img{
+    border-radius: 10px;
+    filter: drop-shadow(-1rem 1.2rem 0.5rem var(--main-color));
+    background-position: 80% 20%;
+    transform:  rotateY(360deg) skew(25deg) scale(0.6) translate3d(0,0,1rem);
+}
+
+
+/* Queries */
+
+
+
+
+
+
+
+@media (max-width: 1280px){
+    html{
+        font-size: 55%;
+    }
+
+    .welcome{
+        font-size: 5rem;
+    }
+    
+}
+
+@media (max-width: 991px){
+    .header{
+        padding: 2rem 3%;
+    }
+
+    section{
+        padding: 10rem 3%;
+    }
+
+    .skills{
+        padding: 7rem;
+    }
+    .about p{
+        font-size: 2rem;
+    }
+    .portfolio{
+        padding-bottom: 7rem;
+    }
+}
+
+
+
+@media (max-width: 768px){
+    #menu-icon{
+        display: block;
+        margin-left: 13rem;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #333;
+        width: 100%;
+        margin-left: 10vw;
+    }
+
+    .navbar a {
+        margin: 10px 0;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0,0,0,.2);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0 .2);
+        display: none;
+    }
+
+    .navbar.active {
+        display: block; /* Se muestra la barra de navegación cuando se activa// Navigation bar displayed when activated */
+    }
+
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+
+    .home{
+        flex-direction: column;
+    }
+
+    .home-content h3{
+        font-size: 2.6rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .about{
+        flex-direction: column;
+        align-items: start;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    .about-content {
+        order: 1; /* Ordeno el texto para que aparezca primero */
+    }
+
+    .circle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        order: 2; /* Ordeno las imágenes para que aparezcan después del texto */
+    }
+
+    .about p{
+        font-size: 1.7rem;
+    }
+
+    .skills h2{
+        margin-bottom: 3rem;
+    }
+
+    .portfolio h2{
+        margin-bottom: 3rem;
+    }
+
+    
+}
+
+@media screen and (max-width: 854px) and (max-height: 480px){
+    .about p{
+        font-size: 1.2rem;
+    }
+}
+
+@media(max-width: 617px){
+    .portfolio-container{
+        grid-template-columns: 1fr;
+    }
+
+
+    .about p{
+        font-size: 1.5rem;
+    }
+
+}
+
+@media(max-width: 450px){
+    html{
+        font-size: 50%;
+    }
+
+    .about p{
+        font-size: 1.3rem;
+    }
+}

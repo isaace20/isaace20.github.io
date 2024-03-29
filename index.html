@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porfolio 2.0</title>
+    <!-- Main Style -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Font awesome -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+
+</head>
+<body>
+    <!-- Header design -->
+    <header class="header">
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+        
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#specialized">Specialized</a>
+            <a href="#portfolio">Porfolio</a>
+            <a href="#skills">Skills</a>
+        </nav>
+    </header>
+    <!-- Home section design -->
+    <section class="home" id="home">
+        <!-- Welcome design -->
+        <div class="welcome">
+            <h2>Hello, welcome</h2>
+            <h1>I'm <span>Isaac Escobar</span></h1>
+            <h3>And i'm a programmer</h3>
+            <!-- Buttons media -->
+            <div class="social-media">
+                <abbr title="Linkedin"><a href="https://www.linkedin.com/in/isaac-escobar-73b7ba1a7/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></abbr>
+                <abbr title="Github"><a href="https://github.com/isaace20" target="_blank"><i class="fa-brands fa-github"></i></a></abbr>
+                <abbr title="E-mail"><a href="#" id="copyEmail"><i class="fa-solid fa-envelope-open-text"></i></a></abbr>
+                <abbr title="CV"><a href="resources/CV Escobar Isaac.pdf" target="_blank"><i class="fa-solid fa-file"></i></a></abbr>
+            </div>
+        </div>
+        <!-- Video Design -->
+        <div class="bg-video">
+            <div class="video-container">
+                <video class="video" autoplay loop muted>
+                    <source src="resources/Bg-video.mp4"  type="video/mp4">
+                </video>
+                
+            </div>
+        </div>
+    </section>
+    <!-- About section design -->
+    <section class="about" id="about">
+        <div class="about-content">
+    
+        <h2>About me</h2>
+        <p>Hello! I am Isaac Escobar, passionate about programming and design with a focus on self-taught learning and personal development. Although I do not have a formal career in software development or design, my commitment to self-education has led me to successfully complete a bootcamp, where I gained solid skills in programming and web design.
+
+            Currently, I am immersed in three additional bootcamps to expand my skill set and explore new areas of technology. My focus on continuous learning has allowed me to gain knowledge in frontend and backend programming, as well as UX/UI design.
+            
+            I am a creative and passionate person who enjoys facing technical challenges and looking for innovative solutions. My lack of work experience is compensated by my dedication and willingness to learn. I am excited for the opportunity to apply my skills in practical projects and collaborate with other professionals in the sector.
+            
+            As a programmer and designer, I strive to create engaging and functional digital experiences that improve users' lives. My goal is to continue growing professionally and contribute significantly to projects that challenge and develop my skills.
+            
+            If you are looking for someone motivated, creative and willing to learn, I would love to connect with you and explore how I can add value to your team!</p>
+        </div>
+        <!-- images floats -->
+        <div class="circle">
+            <!-- contenedor de las 3 imagenes de la animacion // container of the 3 images of the animation  -->
+            <div class="img-container1">
+                <img src="resources/firstimg.jpeg" alt="" class="img1">
+            </div>
+            <div class="img-container2">
+                <img src="resources/secondimg.jpeg" alt=""  class="img2">
+            </div>
+            <div class="img-container3">
+                <img src="resources/treeimg.jpeg" alt="" class="img3">
+            </div>
+            
+            
+            
+        </div>
+    </section>
+    <!-- Specialized section design -->
+    <section class="specialized" id="specialized">
+        <h2>Specialized in</h2>
+        <div class="specialized-container">
+            <div class="specialized-box">
+                <img src="resources/gameimg.jpeg" alt="">
+                <img src="resources/gameimgnobg.png" alt="">
+                <h2>Game developer</h2>
+            </div>
+
+            <div class="specialized-box">
+                <img src="resources/front.jpeg" alt="">
+                <img src="resources/frontimgnobg.png" alt="">
+                <h2>Front end</h2>
+            </div>
+
+            <div class="specialized-box">
+                <img src="resources/diimg.jpeg" alt="">
+                <img src="resources/dimgnobg.png" alt="">
+                <h2>Designer</h2>
+            </div>
+
+        
+        
+        </div>
+    </section>
+    <!-- Portfolio section design -->
+    <section class="portfolio" id="portfolio">
+        <h3>My last proyect</h3>
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <!-- Project images -->
+                <a href="https://github.com/isaace20/Dio-yu-gi-oh"><img src="resources/last.GIF" alt="image"><div class="description">Rock paper scissors</div></a>
+                <a href="https://github.com/isaace20/jogo-memoria-dio"><img src="resources/memori.GIF" alt="image"><div class="description">Memory game</div></a>
+                <a href="https://github.com/isaace20/js-piano-dio"><img src="resources/piano.GIF" alt="image"><div class="description">Virtual piano</div></a>
+                <a href="https://github.com/isaace20/jogo-ralph"><img src="resources/Ralph.GIF" alt="image"><div class="description">Hit a ralph</div></a> 
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills design -->
+    <section class="skills" id="skills">
+        
+        <h3>My skills</h3>
+        <div class="grid-skill" class="card">
+            <!-- imágenes de las tecnologías. // images of technologies.-->
+            <img src="icons/html-icon.svg" alt="image">
+            <img src="icons/css-icon.svg" alt="image">
+            <img src="icons/javascript-1.svg" alt="image">
+            <img src="icons/python-programming-language-icon.svg" alt="image">
+            <img src="icons/mysql-icon.svg" alt="image">
+            <img src="icons/c.svg" alt="image">
+            <img src="icons/react-js-icon.svg" alt="image">
+        </div>
+
+        <h3>Another skills</h3>
+        <div class="grid-skill" class="card">
+            <img src="icons/adobe-illustrator-icon.svg" alt="image">
+            <img src="icons/adobe-photoshop-icon.svg" alt="image">
+            <img src="icons/figma-icon.svg" alt="image">
+        </div>
+    </section>
+    <script src="engine.js"></script>
+</body>
+</html>
